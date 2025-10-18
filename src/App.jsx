@@ -93,7 +93,7 @@ function App() {
       <div className="absolute z-10 right-14 top-0">
         <img className="w-[400px]" src={tree3} alt="" />
       </div>
-      <div className="flex flex-col justify-start items-center">
+      {/* <div className="flex flex-col justify-start items-center">
         <div className="bg-black/80 p-6 rounded-lg shadow-lg">
           <h1 className="font text-[#CD2404] text-2xl mb-2">
             Test your worth
@@ -115,7 +115,7 @@ function App() {
             </button>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
