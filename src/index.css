@@ -1,3 +1,4 @@
+/* Your custom font and styles */
 @font-face {
   font-family: 'StrangerThings';
   src: url('./assets/fonts/font.OTF') format('opentype');
@@ -5,7 +6,7 @@
   font-style: normal;
 }
 
-.font{
+.font {
   font-family: 'StrangerThings', serif;
 }
 
@@ -14,16 +15,50 @@
   -webkit-text-stroke: 2px #CD2404;
 }
 
-.stroked-text-light{
+.stroked-text-light {
   font-family: 'StrangerThings', sans-serif;
   -webkit-text-stroke: 1px #CD2404;
 }
 
-.fog{
+.fog {
   border-radius: 100%;
   opacity: 0.34;
   background: radial-gradient(50% 50% at 50% 50%, #FF1515 0%, rgba(0, 0, 0, 0.00) 100%);
   filter: blur(163.10000610351562px);
 }
 
+/* The print styles for the ticket */
+@media print {
+  /* Hide everything on the page by default */
+  body > * {
+    display: none !important;
+  }
+
+  /* Show *only* the element with .printable-area 
+    and all of its children.
+  */
+  body > .printable-area,
+  .printable-area * {
+    display: block !important;
+    visibility: visible !important;
+  }
+  
+  /* Make the printable area take up the full page */
+  .printable-area {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: #000 !important;
+    color: #fff !important;
+  }
+
+  /* Hide elements you don't want to print, like buttons */
+  .no-print {
+    display: none !important;
+  }
+}
 @import "tailwindcss";
